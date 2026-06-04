@@ -1,45 +1,53 @@
-# Image Search App
+# Pixabay Image Search
 
-A responsive image search application built with **Vite**, **JavaScript**, and
-the **Pixabay API**. The app allows users to search for images by keyword, view
-search results in a gallery, and open images in a lightbox modal.
+A responsive image search application built with **Vite**, **JavaScript**,
+**Axios**, and the **Pixabay API**.
+
+The app allows users to search for photos by keyword, display results in a clean
+image gallery, view image statistics, and open large previews in a lightbox
+modal.
 
 ## Live Demo
 
-[View live page](https://larimar4you.github.io/goit-advancedjs-hw-03/)
+[View live project](https://larimar4you.github.io/pixabay-image-search/)
 
 ## Repository
 
-[GitHub repository](https://github.com/Larimar4you/goit-advancedjs-hw-03)
+[GitHub repository](https://github.com/Larimar4you/pixabay-image-search)
+
+## Preview
+
+![Pixabay Image Search preview](./preview.png)
 
 ## Features
 
 - Search images by keyword
-- Fetch images from Pixabay API
-- Display image cards in a responsive gallery
+- Fetch image data from the Pixabay API
+- Display results in a responsive gallery
 - Show image statistics:
   - Likes
   - Views
   - Comments
   - Downloads
 
-- Open large image previews using SimpleLightbox
-- Show user notifications with iziToast
-- Display loader while data is being fetched
-- Clear previous results before a new search
-- Handle empty search results and request errors
+- Open large image previews in a modal window
+- Refresh SimpleLightbox after rendering new images
+- Show notifications for empty results and request errors
+- Display a loader while data is being fetched
+- Clear previous search results before rendering new ones
+- Handle empty input validation with custom notification logic
 
-## Technologies Used
+## Tech Stack
 
-- HTML5
-- CSS3
-- JavaScript
-- Vite
-- Axios
-- Pixabay API
-- SimpleLightbox
-- iziToast
-- GitHub Pages
+- **HTML5**
+- **CSS3**
+- **JavaScript**
+- **Vite**
+- **Axios**
+- **Pixabay API**
+- **SimpleLightbox**
+- **iziToast**
+- **GitHub Pages**
 
 ## Project Structure
 
@@ -56,22 +64,23 @@ src/
 index.html
 ```
 
-## Main Files
+## Core Logic
 
-### `pixabay-api.js`
+### API Service
 
-Contains the function responsible for HTTP requests to the Pixabay API.
+The `pixabay-api.js` file contains the function responsible for making HTTP
+requests to the Pixabay API.
 
 ```js
 getImagesByQuery(query);
 ```
 
-The function receives a search query, sends a request with the required
-parameters, and returns response data.
+It receives a search query, sends a request with the required parameters, and
+returns the response data.
 
-### `render-functions.js`
+### Rendering Functions
 
-Contains UI rendering functions:
+The `render-functions.js` file contains all UI rendering helpers.
 
 ```js
 createGallery(images);
@@ -80,33 +89,34 @@ showLoader();
 hideLoader();
 ```
 
-This file is responsible for creating gallery markup, clearing the gallery,
-controlling the loader, and refreshing SimpleLightbox after new images are
-added.
+These functions are responsible for creating gallery markup, clearing previous
+results, controlling the loader, and refreshing the SimpleLightbox instance
+after new images are added.
 
-### `main.js`
+### Application Entry Point
 
-Contains the main application logic:
+The `main.js` file contains the main application logic:
 
-- form submit handling
-- input validation
-- API request execution
-- gallery rendering
-- error handling
-- iziToast notifications
+- handling form submission
+- validating user input
+- calling the API service
+- rendering the gallery
+- showing notifications
+- handling errors
+- controlling the loader state
 
-## Installation and Setup
+## Getting Started
 
 Clone the repository:
 
 ```bash
-git clone https://github.com/Larimar4you/goit-advancedjs-hw-03.git
+git clone https://github.com/Larimar4you/pixabay-image-search.git
 ```
 
 Go to the project folder:
 
 ```bash
-cd goit-advancedjs-hw-03
+cd pixabay-image-search
 ```
 
 Install dependencies:
@@ -127,16 +137,29 @@ Build the project for production:
 npm run build
 ```
 
-## Deployment
-
-The project is deployed to GitHub Pages.
-
-Production build command:
+Preview the production build locally:
 
 ```bash
-vite build --base=/goit-advancedjs-hw-03/
+npm run preview
+```
+
+## Deployment
+
+The project is deployed to **GitHub Pages**.
+
+Production build uses the repository base path:
+
+```bash
+vite build --base=/pixabay-image-search/
+```
+
+Live page:
+
+```txt
+https://larimar4you.github.io/pixabay-image-search/
 ```
 
 ## Author
 
-Created by **Lara Kosta AI × Fullstack**
+Created by **Lara Kosta** Fullstack Developer in progress with a focus on
+JavaScript, React, Backend development, and AI-powered automation.
