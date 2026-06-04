@@ -4,24 +4,31 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Homework 11</title>
-    <link rel="stylesheet" href="./css/styles.css" />
+    <title>goit-advancedjs-hw-03</title>
   </head>
+
   <body>
-
     <main>
-      <form class ="form">
-        <label> 
-          <input type="text" name="query" class="input" autocomplete="off" placeholder="Searching..." required/> 
-        </label> 
-          <button type="submit">Search</button> 
-        </form> 
-  
-        <div class="loader">Loading...</div>  
+      <form class="form">
+        <label>
+          <input
+            type="text"
+            name="search-text"
+            class="input"
+            autocomplete="off"
+            placeholder="Search images..."
+            required
+          />
+        </label>
 
-        <div class="gallery"></div>
+        <button type="submit">Search</button>
       </form>
+
+      <div class="loader is-hidden">Loading...</div>
+
+      <ul class="gallery"></ul>
     </main>
+
     <script type="module" src="./main.js"></script>
   </body>
 </html>
